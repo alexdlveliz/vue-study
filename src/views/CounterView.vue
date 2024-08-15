@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import CounterComponent from '@/components/CounterComponent.vue'
+import CounterComponent from '@/modules/counter/components/CounterComponent.vue'
 </script>
 
 <style></style>

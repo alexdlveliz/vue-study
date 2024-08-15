@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import TaskListComponent from '@/components/TaskListComponent.vue'
+import TaskListComponent from '@/modules/task-list/components/TaskListComponent.vue'
 </script>
 
 <style></style>

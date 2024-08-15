@@ -1,6 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import CounterView from '@/views/CounterView.vue'
-import TaskListComponent from '@/components/TaskListComponent.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,12 +11,17 @@ const router = createRouter({
     {
       path: '/counter',
       name: 'Contador',
-      component: import('@/views/CounterView.vue')
+      component: () => import('@/views/CounterView.vue')
     },
     {
       path: '/tasks',
       name: 'Lista de tareas',
-      component: import('@/views/TaskListView.vue')
+      component: () => import('@/views/TaskListView.vue')
+    },
+    {
+      path: '/register',
+      name: 'Registro',
+      component: () => import('@/modules/register/views/RegisterView.vue')
     }
   ]
 })
