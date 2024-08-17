@@ -1,8 +1,8 @@
 <template>
   <div class="sidebar">
     <h2>Bienvenido</h2>
-    <h3>Nombre: {{ nombre }}</h3>
-    <h4>Email: {{ email }}</h4>
+    <h3>Nombre: {{ registerStore.nombre }}</h3>
+    <h4>Email: {{ registerStore.email }}</h4>
     <ul>
       <li><router-link to="/counter">contador</router-link></li>
       <li><router-link to="/tasks">Lista de tareas</router-link></li>
@@ -13,24 +13,21 @@
 
 <script setup lang="ts">
 import { useRegisterStore } from '@/stores/registerStore'
-import { ref, watch } from 'vue'
 
 const registerStore = useRegisterStore()
-const nombre = ref(registerStore.nombre)
-const email = ref(registerStore.email)
 
-watch(
-  () => registerStore.nombre,
-  (newValue) => {
-    nombre.value = newValue
-  }
-)
-watch(
-  () => registerStore.email,
-  (newValue) => {
-    email.value = newValue
-  }
-)
+// watch(
+//   () => registerStore.nombre,
+//   (newValue) => {
+//     nombre.value = newValue
+//   }
+// )
+// watch(
+//   () => registerStore.email,
+//   (newValue) => {
+//     email.value = newValue
+//   }
+// )
 </script>
 
 <style>
